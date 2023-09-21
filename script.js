@@ -73,5 +73,27 @@ function dillerPlay(dillerPoints, playerPoints, dillerCards) {
 }
 
 function blackJack() {
+  const dillerCards = [getCard(), getCard()];
+  const playerCards = [getCard(), getCard()];
 
+  let dillerPoints = sumPoints(dillerCards);
+  let playerPoints = sumPoints(playerCards);
+
+  
+  console.log(`Diller has got ${dillerCards[0]}`);
+  console.log(`You've got ${playerCards.toString()} (${playerPoints})`);
+  
+
+  while (prompt("Do you want to hit (y/n)?", "y") != "n") {
+    playerCards.push(getCard());
+
+    playerPoints = sumPoints(playerCards, playerPoints);
+
+    console.log(`You've got ${playerCards.toString()} (${playerPoints})`);
+    
+    if (checkLose(playerPoints)) {
+      console.log("You've lost!");
+      break;
+    }
+  }
 }
