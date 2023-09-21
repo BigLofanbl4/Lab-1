@@ -63,6 +63,15 @@ function checkLose(currentPoints) {
   return currentPoints > 21 ? true : false;
 }
 
+function dillerPlay(dillerPoints, playerPoints, dillerCards) {  
+  while (dillerPoints < playerPoints) {
+    dillerCards.push(getCard());
+    dillerPoints = sumPoints(dillerCards, dillerPoints);
+  }
+
+  return dillerPoints;
+}
+
 function blackJack() {
 
 }
