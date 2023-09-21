@@ -96,4 +96,15 @@ function blackJack() {
       break;
     }
   }
+
+  dillerPoints = dillerPlay(dillerPoints, playerPoints, dillerCards);
+  console.log(`Diller has got ${dillerCards.toString()}, which equals ${dillerPoints}`);
+
+  if (dillerPoints > playerPoints && dillerPoints <= 21) {
+    console.log("You've lost");
+  } else {
+    console.log("You've won");
+  }
 }
+
+blackJack();
