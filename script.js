@@ -49,6 +49,16 @@ function getPoint(card, currentPoints = 0) {
 return points;
 }
 
+function sumPoints(cards, currentPoints = 0) {
+  const cardPoints = [];
+
+  for (let card of cards) {
+    cardPoints.push(getPoint(card, currentPoints))
+  }
+
+  return cardPoints.reduce((sum, card) => sum + card, 0);
+}
+
 function blackJack() {
-  
+
 }
