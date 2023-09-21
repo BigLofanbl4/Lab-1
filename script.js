@@ -59,6 +59,10 @@ function sumPoints(cards, currentPoints = 0) {
   return cardPoints.reduce((sum, card) => sum + card, 0);
 }
 
+function checkLose(currentPoints) {
+  return currentPoints > 21 ? true : false;
+}
+
 function blackJack() {
 
 }
